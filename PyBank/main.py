@@ -37,6 +37,9 @@
 import os
 import csv
 
+# Importing the statistics module
+import statistics
+
 # set the csv file path to Resource/budget_data.csv that contains financial data
 # for this analysis
 #
@@ -124,8 +127,10 @@ with open(my_csvfile, newline = "") as csvfile:
     #
     #  Calculate the average change_in_profit_loss using profit_loss_list
     #
-    average_changes_in_profit_loss = sum(profit_loss_list)/len(profit_loss_list)
-    
+    # average_changes_in_profit_loss = sum(profit_loss_list)/len(profit_loss_list)
+    # Using Python "statistics.mean()" function to calcuate average
+    #
+    average_changes_in_profit_loss = statistics.mean(profit_loss_list)
     # Find Greatest increase in profits with date and amount using profit_loss_list
     #
     greatest_increase_profit = max(profit_loss_list)
